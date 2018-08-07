@@ -15,4 +15,12 @@ class TodoService(val todoRepositry: TodoRepository) {
         return todoRepositry.get(id);
     }
 
+    fun update(id: Long, task: String): Mono<Item>? {
+        return todoRepositry.update(id, task)
+    }
+
+    fun deleteItem(id: Long): Mono<Void> {
+        return todoRepositry.delete(id)
+    }
+
 }

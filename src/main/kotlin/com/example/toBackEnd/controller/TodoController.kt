@@ -16,9 +16,19 @@ class TodoController(val todoService: TodoService) {
         return todoService.add(item)
     }
 
-
     @GetMapping("/get/{id}")
     fun getItem(@PathVariable id: Long): Mono<Item> {
         return todoService.get(id)
+    }
+
+    @PatchMapping("/update/{id}/{task}")
+    fun updateItem(@PathVariable id: Long, @PathVariable task: String):
+            Mono<Item>? {
+        return todoService.update(id, task)
+    }
+
+    @DeleteMapping("/delete/{id}")
+    fun deleteItem(@PathVariable id:Long): Mono<Void> {
+        return todoService.deleteItem(id)
     }
 }

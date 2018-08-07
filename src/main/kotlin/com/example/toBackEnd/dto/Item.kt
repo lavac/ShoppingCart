@@ -1,3 +1,3 @@
 package com.example.toBackEnd.dto
 
-data class Item(val id: Long,  val task:String)
+data class Item(val id: Long,  var task:String)
