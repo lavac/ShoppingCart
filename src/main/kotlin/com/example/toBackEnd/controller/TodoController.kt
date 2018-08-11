@@ -4,6 +4,7 @@ import com.example.toBackEnd.dto.Item
 import com.example.toBackEnd.service.TodoService
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.web.bind.annotation.*
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 
@@ -21,14 +22,20 @@ class TodoController(val todoService: TodoService) {
         return todoService.get(id)
     }
 
-    @PatchMapping("/update/{id}/{task}")
-    fun updateItem(@PathVariable id: Long, @PathVariable task: String):
-            Mono<Item>? {
+    @PatchMapping("/update")
+    fun updateItem(@RequestParam id: Long, @RequestParam task: String):
+            Mono<Item> {
         return todoService.update(id, task)
     }
 
     @DeleteMapping("/delete/{id}")
     fun deleteItem(@PathVariable id:Long): Mono<Void> {
         return todoService.deleteItem(id)
+    }
+
+    @GetMapping("/get")
+    fun getItems() : Flux<Item> {
+        print("eagerljsrhjffffffffffffffffffffff")
+        return todoService.getItems();
     }
 }

@@ -11,4 +11,4 @@ class TodoBackEndApplication
 
     fun main(args: Array<String>) {
         runApplication<TodoBackEndApplication>(*args)
-    }
+}
