@@ -1,4 +1,4 @@
-package com.example.toBackEnd
+package com.example.shoppingCart
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class TodoBackEndApplicationTests {
+class ShoppingCartApplicationTests {
 
 	@Test
 	fun contextLoads() {

@@ -1,4 +1,4 @@
-package com.example.toBackEnd.error
+package com.example.shoppingCart.error
 
 class EmptyException : Throwable() {
 
